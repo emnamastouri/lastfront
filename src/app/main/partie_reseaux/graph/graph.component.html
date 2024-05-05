@@ -1,1 +1,58 @@
-<p>graph works!</p>
+<!--<div class="tree">
+    <ul>
+        <li>
+            <a href="#">1</a>
+            <ul>
+                <li>
+                    <a href="#">2</a>
+                    <ul>
+                        <li>
+                            <a href="#">2.1</a>
+
+                        </li>
+                        <li>
+                            <a href="#">2.2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">3</a>
+                    <ul>
+                        <ul>
+                            <li>
+                                <a href="#">3.1</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">3.1.1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">3.1.2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">3.2</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>-->
+
+
+<body>
+<div class="tree">
+    <ul *ngFor="let local of localhost">
+        <li *ngIf="local"  ><a href="#" [ngStyle]="{  'border': 'solid', 'border-color': local.display_name }"><img src="assets/localhost.png" alt=""><span >{{local.host_name}}</span></a></li>
+        <ul *ngFor="let par of parent">
+            <li *ngIf="par"><a href="#" [ngStyle]="{  'border': 'solid', 'border-color': par.display_name }"><img src="assets/routerimage.png" alt=""><span>{{par.host_name}}</span></a></li>
+            <ul *ngFor="let child of otherhosts">
+                <li *ngIf="child.address.includes(extract(par.address))"><a href="#" [ngStyle]="{  'border': 'solid', 'border-color': child.display_name }"><img src="assets/pcimage.jpg" alt=""><span>{{child.host_name}}</span></a></li>
+            </ul>
+        </ul>
+    </ul>
+
+</div>
+</body>

@@ -9,6 +9,49 @@ import Swal from 'sweetalert2';
   styleUrl: './agentaccount.component.css'
 })
 export class AgentaccountComponent {
+  //navigation entr les fenetres
+ 
+  v_social=false;
+  v_info=false;
+  v_changepass=false;
+  v_generale=true;
+connection() {
+  this.v_social=false;
+  this.v_info=false;
+  this.v_changepass=false;
+  this.v_generale=false;
+}
+social() {
+  this.v_social=true;
+  this.v_info=false;
+  this.v_changepass=false;
+  this.v_generale=false;
+}
+info() {
+  this.v_social=false;
+  this.v_info=true;
+  this.v_changepass=false;
+  this.v_generale=false;
+}
+changepass() {
+  this.v_social=false;
+  this.v_info=false;
+  this.v_changepass=true;
+  this.v_generale=false;
+}
+generale() {
+  this.v_social=false;
+  this.v_info=false;
+  this.v_changepass=false;
+  this.v_generale=true;
+  
+}
+
+
+
+
+
+
   agentCIN: string = '';
   agent:any;
   firstname:string=''
