@@ -1,0 +1,75 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 bg-white">
+            <div class="chat-message" #chatMessage>
+                <ul class="chat">
+                    <script>
+                        window.addEventListener('load', function () {
+                            document.querySelector('.chat-message').scrollTop = document.querySelector('.chat-message').scrollHeight;
+                        });
+                    </script>
+                    <li *ngFor="let item of geted"
+                        [ngClass]="{'right clearfix': getidentity(item) === 'mine', 'left clearfix': getidentity(item) === 'other'}">
+                        <span
+                            [ngClass]="{'chat-img pull-right': getidentity(item) === 'mine', 'chat-img pull-left': getidentity(item) === 'other'}">
+                            <img src="{{item.image}}" alt="User Avatar">
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font"
+                                    [ngClass]="{'pull-right ': getidentity(item) === 'mine','pull-left ': getidentity(item) === 'other'}">&nbsp;&nbsp;&nbsp;{{item.username}}
+                                    &nbsp;&nbsp;&nbsp;</strong>
+                                <small
+                                    [ngClass]="{'pull-right text-muted': getidentity(item) === 'mine', 'pull-left text-muted': getidentity(item) === 'other'}"><i
+                                        class="fa fa-clock-o"></i> {{item.timestamp}}</small>
+                            </div><br>
+                            <p
+                                [ngClass]="{'pull-right ': getidentity(item) === 'mine','pull-left ': getidentity(item) === 'other'}">
+                                {{item.message}}
+                            </p>
+                        </div>
+                    </li>
+                    <li *ngFor="let item of messages">
+                        <span
+                            [ngClass]="{'chat-img pull-right': getidentity(item) === 'mine', 'chat-img pull-left': getidentity(item) === 'other'}">
+                            <img src="{{item.image}}" alt="User Avatar">
+                        </span>
+                        <div class="chat-body clearfix">
+                            <div class="header">
+                                <strong class="primary-font"
+                                    [ngClass]="{'pull-right ': getidentity(item) === 'mine','pull-left ': getidentity(item) === 'other'}">&nbsp;&nbsp;&nbsp;{{item.username}}&nbsp;&nbsp;&nbsp;</strong>
+                                <small
+                                    [ngClass]="{'pull-right text-muted': getidentity(item) === 'mine', 'pull-left text-muted': getidentity(item) === 'other'}"><i
+                                        class="fa fa-clock-o"></i> {{item.timestamp}}</small>
+                            </div><br>
+                            <p
+                                [ngClass]="{'pull-right ': getidentity(item) === 'mine','pull-left ': getidentity(item) === 'other'}">
+                                {{item.message}}
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat-box bg-white">
+
+                <div class="input-group">
+                    <input class="form-control border no-shadow no-rounded " placeholder="Type your message here" (keydown)="onKeyDown($event)" [(ngModel)]="message">
+                    <span class="input-group-btn">
+                        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                            rel="stylesheet"
+                            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+                            crossorigin="anonymous">
+
+                        <div class="btn btn-success" (click)="sendMessage()" style="margin-right: 30px;">
+                            <i class="fa fa-paper-plane-o fa-2x send" aria-hidden="true"></i>
+                            <i class="fa fa-paper-plane-o fa-2x send2" aria-hidden="true"></i>
+                            <p>send</p>
+                        </div>
+                        <!--<button class="btn btn-success no-rounded" type="button" (click)="sendMessage()">Send</button>-->
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

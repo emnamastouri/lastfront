@@ -1,0 +1,16 @@
+.footer {
+    height: 0px; /* Increase the height of the footer */
+  }
+  .footer section {
+    height: 100%; /* Make the section take up the full height of the footer */
+  }
+  .footer section .row {
+    height: 100%; /* Make the row take up the full height of the section */
+    align-items: center; /* Vertically center the content */
+  }
+  .footer section .col-md-7 {
+    order: 0; /* Change the order of the columns on medium screens and above */
+  }
+  .footer section .col-md-5 {
+    order: 1; /* Change the order of the columns on medium screens and above */
+  }

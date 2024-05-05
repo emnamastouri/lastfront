@@ -1,0 +1,19 @@
+<div class="container">
+    <aside class="left">
+        <div class="message" >  Choisir votre identité :</div>
+        <br><br>
+        <input type="submit" value="Administrateur réseau >" class="admin-reseau" (click)="openadminlogin()" >
+        <br><br>
+        <input type="submit" value="Agent >" class="agent" (click)="openagentlogin()" >
+    
+      
+    </aside>
+    
+    <aside class="right">
+      <app-adminlogin *ngIf="admin_verif==true"></app-adminlogin>
+      <app-agentlogin *ngIf="agent_verif==true"></app-agentlogin>
+    </aside>
+    
+    </div>
+    <app-footer></app-footer>
+    

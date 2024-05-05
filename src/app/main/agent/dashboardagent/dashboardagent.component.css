@@ -1,0 +1,83 @@
+
+  .button-63 {
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 16px; /* Decreased font size */
+    justify-content: center;
+    line-height: 1em;
+    padding: 12px 16px; /* Decreased padding */
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .button-63:active,
+  .button-63:hover {
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.93);
+    transform: scale(1.1);
+  }
+
+  
+  @media (min-width: 768px) {
+    .button-63 {
+      font-size: 18px; /* Decreased font size for larger screens */
+      min-width: 160px; /* Decreased min-width for larger screens */
+    }
+  }
+
+
+  .navbar-nav .nav-link {
+    color: #333;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+  
+  .navbar-nav .nav-link.active {
+    color: #fff;
+    cursor: pointer;
+    
+  }
+  
+  .navbar-nav .nav-link.active:hover {
+    cursor: pointer;
+    background-color: #0069d9;
+  }
+
+
+
+
+
+
+
+  .offcanvas-body .navbar-nav .nav-item:last-child {
+    /* Position the "Deconnecter" link absolutely */
+    position: absolute;
+    /* Move the "Deconnecter" link to the bottom of the container */
+    bottom: 25px;
+    /* Align the "Deconnecter" link to the right */
+    left: 15px;
+  }
+
+
+
+
+
+  main.right {
+    height: 600px;
+}
