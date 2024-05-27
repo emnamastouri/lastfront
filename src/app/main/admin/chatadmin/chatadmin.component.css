@@ -1,0 +1,248 @@
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 5px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  
+  
+  .bg-white {
+    background-color: #fff;
+  }
+  
+  .chat-message::before {
+    content: "";
+    height: 1px;
+  }
+  
+  .chat-message {
+    padding: 20px;
+    min-height: 460px;
+    max-height: 460px;
+    overflow-y: auto;
+    width: 1150px;
+  
+  }
+  
+  .chat {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  
+  .chat li {
+    margin-bottom: 10px;
+  }
+  
+  .chat-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+  
+  .chat-body {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header {
+    margin-bottom: 10px;
+  }
+  
+  .primary-font {
+    font-weight: bold;
+    color: #337ab7;
+  }
+  
+  .pull-right {
+    float: right;
+  }
+  
+  .pull-left {
+    float: left;
+  }
+  
+  .text-muted {
+    color: #999;
+  }
+  
+  .chat-box {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+    margin-left: 190px;
+    margin-right: 100px;
+    
+  }
+  
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 80px;
+    
+  }
+  
+  .no-shadow {
+    box-shadow: none;
+  }
+  
+  .no-rounded {
+    border-radius: 0;
+  }
+  
+  .border {
+    border: 1px solid #ccc;
+  }
+  
+  .chat li img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50em;
+    -moz-border-radius: 50em;
+    -webkit-border-radius: 50em;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .chat-message {
+      min-height: 100%; /* Remove fixed height for smaller screens */
+      max-height: 100%;
+    }
+  
+    .input-group {
+      margin-left: auto; /* Center input group on smaller screens */
+      margin-right: auto;
+      margin-bottom: 60px;
+    }
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust height as needed */
+  }
+  
+  
+  
+  @keyframes button-click {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  
+  
+  .btn {
+    position: absolute;
+    margin-left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; /* Adjust width as needed */
+    border: 5px solid #2292e9;
+    background-color: #2293e9a6;
+    padding: 10px; /* Adjust padding as needed */
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .btn p {
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+    font-weight: 900;
+    font-size: 16px; /* Adjust font size as needed */
+    margin-left: 30px;
+    transition: all 0.5s ease;
+  }
+  
+  .send {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    left: 30px;
+    color: #fff;
+    transition: all 0.5s ease;
+  }
+  
+  .send2 {
+    position: absolute;
+    top: 70px; /* Adjust top position as needed */
+    left: 30px;
+    color: #696666;
+    transition: all 0.5s ease;
+  }
+  
+  /* Hover effects */
+  .btn:hover {
+    background: #2292e9;
+    transition: all 0.5s ease;
+  }
+  
+  .btn:hover p {
+    color: #696666;
+    transition: all 0.5s ease;
+    animation: move 1s linear 1s forwards;
+  }
+  
+  .btn:hover .send {
+    top: -50px;
+    transition: all 0.5s ease;
+  }
+  
+  .btn:hover .send2 {
+    top: 10px; /* Adjust top position as needed */
+    transition: all 0.5s ease;
+    animation: sending 1s linear 1s forwards;
+  }
+  
+  /* CSS3 animation keyframes */
+  @keyframes sending {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translate(40px, -60px);
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-15px); /* Adjust translation for smaller button */
+    }
+  }

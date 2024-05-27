@@ -48,7 +48,8 @@
 
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar" >
     <div class="container-fluid">
-      <button class="button-63" (click)="myaccount()">Mon comte</button>
+      <button class="button-63" (click)="myaccount()">Mon compte</button>
+      <a style="color: aliceblue; font-size:xx-large;"> ADMINISTRATEUR </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,29 +60,26 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" (click)="voirtout()">lister les agents</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page"(click)="add()" >Ajouter agent</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" (click)="supprime()">Supprimer un  agent</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" (click)="voirr()">Voir un agent</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" (click)="updater()">Mettre à jour agent</a>
-            </li> 
+            
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" (click)="chatting()">Message</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="manageagents()"  >Gérer les agents </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="voirgraph()" >Lister les hôtes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" (click)="voirtout()">Map globale</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" (click)="logout()"  >Deconnecter</a>
             </li>
             
+            
           </ul>
+          
           <!--
             ***********search bar **************
             <form class="d-flex mt-3" role="search">
@@ -95,12 +93,12 @@
 
 
   <main class="right" *ngIf="_auth.isloggedin()==true">
-        <app-seeall *ngIf="voirall==true"></app-seeall>
-        <app-addagent *ngIf="addv==true"></app-addagent>
-        <app-delete *ngIf="supprimerv==true"></app-delete>
-        <app-seeone *ngIf="voir==true"></app-seeone>
-        <app-updateagent *ngIf="updatev==true"></app-updateagent>
         <app-myaccount *ngIf="my==true"></app-myaccount>
-        <app-chat *ngIf="chat==true"></app-chat>
+        <app-chatadmin *ngIf="chat==true"></app-chatadmin>
+        <app-manageagents *ngIf="manage==true"></app-manageagents>
+        
+    <app-graph *ngIf="graph==true"></app-graph>
+    <app-voirallhost *ngIf="tout==true"></app-voirallhost>
   </main>
   </body>
+  <app-footer></app-footer>

@@ -4,75 +4,82 @@
     Paramètres du compte
   </h4>
 
-  <div class="card overflow-hidden">
+  <div class="card overflow-hidden" >
     <div class="row no-gutters row-bordered row-border-light">
       <div class="col-md-3 pt-0">
         <div class="list-group list-group-flush account-settings-links">
-          <a class="list-group-item list-group-item-action active" data-toggle="list" (click)="generale()">General</a>
-          <a class="list-group-item list-group-item-action" data-toggle="list" (click)="changepass()">Change password</a>
-          <a class="list-group-item list-group-item-action" data-toggle="list"(click)="info()">Info</a>
-          <a class="list-group-item list-group-item-action" data-toggle="list" (click)="social()">Social links</a>
+          <a class="list-group-item list-group-item-action active" data-toggle="list" (click)="generale()">Genéral</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" (click)="changepass()">Changer mot de passe</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" (click)="info()">Informations</a>
+          <a class="list-group-item list-group-item-action" data-toggle="list" (click)="social()">Liens social</a>
         </div>
       </div>
       <div class="col-md-9">
         <div class="tab-content">
           <!--*********************************************************************-->
           <div class="tab-pane fade active show" id="account-general" *ngIf="v_generale==true">
-
-            <div class="card-body media align-items-center">
-              <img [src]="image" alt="" class="d-block ui-w-80">
-              <div class="media-body ml-4">
+            <div class="card-body media align-items-center d-flex justify-content-between">
+              <div class="media-body">
                 <label class="btn btn-outline-primary">
                   Télécharger une nouvelle photo
-                  <input type="file" class="account-settings-fileinput">
+                  <input type="file" class="account-settings-fileinput"  (change)="select($event)">
                 </label> &nbsp;
                 <button type="button" class="btn btn-default md-btn-flat">réinitialiser</button>
-
                 <div class="text-light small mt-1">Permise JPG, GIF or PNG. Max size of 800K</div>
               </div>
+              <img [src]="image" alt="" class="d-block ui-w-80" style="width: 100px; /* Adjust the size as needed */
+              height: 100px;
+              object-fit: cover; /* This ensures the image maintains its aspect ratio and fills the square space */
+              border: 2px solid #ccc; /* Add a border */">
             </div>
             <hr class="border-light m-0">
 
             <div class="card-body">
               <div class="form-group">
                 <label class="form-label">Nom d'utilisateur</label>
-                <input type="text" class="form-control mb-1" [value]="lastname">
+                <input type="text" class="form-control mb-1" [(ngModel)]="lastname" value="lastname"> 
               </div>
               <div class="form-group">
                 <label class="form-label">Prénom d'utilisateur</label>
-                <input type="text" class="form-control" [value]="firstname">
+                <input type="text" class="form-control" [(ngModel)]="firstname"value="firstname">
               </div>
               <div class="form-group">
                 <label class="form-label">E-mail</label>
-                <input type="text" class="form-control mb-1" [value]="email">
-                
+                <input type="text" class="form-control mb-1"[(ngModel)]="email" value="email">
+
               </div>
               <div class="form-group">
                 <label class="form-label">CIN</label>
-                <input type="text" class="form-control" [value]="agentCIN">
+                <input type="text" class="form-control" [(ngModel)]="agentCIN" value="agentCIN">
+              </div>
+              <div class="text-right mt-3">
+                <button type="button" class="btn btn-primary" (click)="updategeneral()" >Enregistrer les changements </button>&nbsp;
               </div>
             </div>
 
           </div>
           <!--*********************************************************************-->
-          <div class="tab-pane fade active show" id="account-change-password"  *ngIf="v_changepass==true">
+          <div class="tab-pane fade active show" id="account-change-password" *ngIf="v_changepass==true">
             <div class="card-body pb-2">
 
               <div class="form-group">
-                <label class="form-label">Current password</label>
-                <input type="password" class="form-control">
+                <label class="form-label">Mot de passe actuel</label>
+                <input type="password" class="form-control" [(ngModel)]="agentv.password">
               </div>
 
               <div class="form-group">
-                <label class="form-label">New password</label>
-                <input type="password" class="form-control">
+                <label class="form-label">Nouveau mot de passe</label>
+                <input type="password" class="form-control" [(ngModel)]="passe1">
               </div>
 
               <div class="form-group">
-                <label class="form-label">Repeat new password</label>
-                <input type="password" class="form-control">
+                <label class="form-label">confirmer votre mot de passe</label>
+                <input type="password" class="form-control" [(ngModel)]="passe2">
               </div>
 
+            </div>
+            <div class="text-right mt-3">
+              <button type="button" class="btn btn-primary" (click)="changepassword()" >Enregistrer les changements </button>&nbsp;
             </div>
           </div>
           <!--*********************************************************************-->
@@ -81,22 +88,14 @@
 
               <div class="form-group">
                 <label class="form-label">Bio</label>
-                <textarea class="form-control" rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nunc arcu, dignissim sit amet sollicitudin iaculis, vehicula id urna. Sed luctus urna nunc. Donec fermentum, magna sit amet rutrum pretium, turpis dolor molestie diam, ut lacinia diam risus eleifend sapien. Curabitur ac nibh nulla. Maecenas nec augue placerat, viverra tellus non, pulvinar risus.</textarea>
+                <textarea class="form-control"
+                  rows="5" [(ngModel)]="bio">{{bio}}</textarea>
               </div>
               <div class="form-group">
-                <label class="form-label">Birthday</label>
-                <input type="text" class="form-control" value="May 3, 1995">
+                <label class="form-label">Date de naissance</label>
+                <input type="text" class="form-control" value="Birthday" [(ngModel)]="birthday">
               </div>
-              <div class="form-group">
-                <label class="form-label">Country</label>
-                <select class="custom-select">
-                  <option>USA</option>
-                  <option selected="">Canada</option>
-                  <option>UK</option>
-                  <option>Germany</option>
-                  <option>France</option>
-                </select>
-              </div>
+              
 
 
             </div>
@@ -105,54 +104,50 @@
 
               <h6 class="mb-4">Contacts</h6>
               <div class="form-group">
-                <label class="form-label">Phone</label>
-                <input type="text" class="form-control" value="+0 (123) 456 7891">
+                <label class="form-label">Téléphone</label>
+                <input type="text" class="form-control" value="Phone" [(ngModel)]="phone">
               </div>
-              <div class="form-group">
-                <label class="form-label">Website</label>
-                <input type="text" class="form-control" value="">
-              </div>
+             
 
             </div>
-    
+            <div class="text-right mt-3">
+              <button type="button" class="btn btn-primary" (click)="changebio()" >Enregistrer les changements </button>&nbsp;
+            </div>
+
           </div>
           <!--*********************************************************************-->
-          <div class="tab-pane fade active show" id="account-social-links"  *ngIf="v_social==true">
+          <div class="tab-pane fade active show" id="account-social-links" *ngIf="v_social==true">
             <div class="card-body pb-2">
 
               <div class="form-group">
                 <label class="form-label">Twitter</label>
-                <input type="text" class="form-control" value="https://twitter.com/user">
+                <input type="text" class="form-control" value="Twitter" [(ngModel)]="twitter">
               </div>
               <div class="form-group">
                 <label class="form-label">Facebook</label>
-                <input type="text" class="form-control" value="https://www.facebook.com/user">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Google+</label>
-                <input type="text" class="form-control" value="">
+                <input type="text" class="form-control" value="Facebook" [(ngModel)]="facebook">
               </div>
               <div class="form-group">
                 <label class="form-label">LinkedIn</label>
-                <input type="text" class="form-control" value="">
+                <input type="text" class="form-control" value="LinkedIn" [(ngModel)]="linkedin">
               </div>
               <div class="form-group">
                 <label class="form-label">Instagram</label>
-                <input type="text" class="form-control" value="https://www.instagram.com/user">
+                <input type="text" class="form-control" value="instagrame" [(ngModel)]="instagrame">
               </div>
 
             </div>
+            <div class="text-right mt-3">
+              <button type="button" class="btn btn-primary" (click)="changesocial()" >Enregistrer les changements </button>&nbsp;
+            </div>
           </div>
-          
-          
+
+
         </div>
       </div>
     </div>
   </div>
 
-  <div class="text-right mt-3">
-    <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-    <button type="button" class="btn btn-default">Cancel</button>
-  </div>
+
 
 </div>

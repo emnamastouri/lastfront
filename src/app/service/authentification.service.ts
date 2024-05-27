@@ -22,6 +22,15 @@ loginadmin(admin:any){
 loginagent(agent:any){
   return this.http.post(this.urlagent+'login',agent);
 }
+
+changepass(agent:any){
+  return this.http.put('http://127.0.0.1:3100/agent/changepass',agent);
+}
+
+changepassadmin(admin:any){
+  return this.http.put('http://127.0.0.1:3100/administrateur/changepass',admin);
+}
+
 isloggedin(){
   let token =localStorage.getItem('token');
   if(token){

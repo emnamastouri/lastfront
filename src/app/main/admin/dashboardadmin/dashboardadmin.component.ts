@@ -12,81 +12,46 @@ export class DashboardadminComponent {
 constructor(private router:Router,public _auth:AuthentificationService) { }
 
 
-addv:boolean=false;
-voir:boolean=false;
-updatev:boolean=false;
-supprimerv:boolean=false;
-voirall:boolean=false;
+tout=false;
+graph=false;
 my:boolean=false;
-chat:boolean=true;
-
-add(){
-    this.addv=true;
-    this.voir=false;
-    this.updatev=false;
-    this.supprimerv=false;
-    this.voirall=false;
-    this.my=false;
-    this.chat=false;
-}
-
-supprime(){
-    this.addv=false;
-    this.voir=false;
-    this.updatev=false;
-    this.supprimerv=true;
-    this.voirall=false;
-    this.my=false;
-    this.chat=false;
-}
-
-updater(){
-    this.addv=false;
-    this.voir=false;
-    this.updatev=true;
-    this.supprimerv=false;
-    this.voirall=false;
-    this.my=false;
-    this.chat=false;
-}
-
-voirr(){
-    this.addv=false;
-    this.voir=true;
-    this.updatev=false;
-    this.supprimerv=false;
-    this.voirall=false;
-    this.my=false;
-    this.chat=false;
-}
+chat:boolean=false;
+manage:boolean=true;
 voirtout(){
-    this.addv=false;
-    this.voir=false;
-    this.updatev=false;
-    this.supprimerv=false;
-    this.voirall=true;
+    
     this.my=false;
+    this.graph=false;
+    this.tout=true;
     this.chat=false;
-}
+    this.manage=false;
+  
+  }
+  voirgraph(){
+    this.my=false;
+      this.graph=true;
+      this.tout=false;
+      this.chat=false;
+      this.manage=false;
+  }
+
 myaccount(){
-    this.addv=false;
-    this.voir=false;
-    this.updatev=false;
-    this.supprimerv=false;
-    this.voirall=false;
+
     this.my=true;
     this.chat=false;
+    this.manage=false;
 
 }
 chatting(){
-    this.addv=false;
-    this.voir=false;
-    this.updatev=false;
-    this.supprimerv=false;
-    this.voirall=false;
+
     this.my=false;
     this.chat=true;
+    this.manage=false;
 
+}
+manageagents(){
+    this.my=false;
+    this.chat=false;
+    this.manage=true;
 }
 logout(){
     this.router.navigate(['/home'])

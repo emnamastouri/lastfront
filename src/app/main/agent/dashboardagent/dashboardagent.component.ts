@@ -12,7 +12,7 @@ import bootstrap from 'bootstrap';
 export class DashboardagentComponent {
   my=false;
   tout=false;
-  graph=false;
+  graph=false; 
   chat=true
  
     constructor(private router:Router,public _auth:AuthentificationService) {}

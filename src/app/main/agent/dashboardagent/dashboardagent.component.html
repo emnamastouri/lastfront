@@ -20,7 +20,7 @@
 <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico"> 
 <meta name="theme-color" content="#712cf9">
 
 
@@ -131,7 +131,8 @@
 
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar" >
     <div class="container-fluid">
-      <button class="button-63" (click)="myaccount()">Mon comte</button>
+      <button class="button-63" (click)="myaccount()">Mon compte</button>
+      <a style="color: aliceblue; font-size:xx-large;"> AGENT </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -143,10 +144,10 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" (click)="voirgraph()" >Map globale</a>
+              <a class="nav-link active" aria-current="page" (click)="voirgraph()" >Lister les hôtes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" (click)="voirtout()">Lister les hôtes</a>
+              <a class="nav-link active" aria-current="page" (click)="voirtout()">Map globale</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" (click)="chatting()">Message</a>
@@ -156,12 +157,7 @@
             </li>
             
           </ul>
-          <!--
-            ***********search bar **************
-            <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>-->
+         
         </div>
       </div>
     </div>

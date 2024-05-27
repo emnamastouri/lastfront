@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+/*import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-graph',
@@ -75,4 +75,36 @@ export class GraphComponent {
     }
   }
 
+}
+*/
+
+
+
+import {Component,OnInit,ViewEncapsulation} from '@angular/core';
+import {TreeNode} from 'primeng/api';
+import {MessageService} from 'primeng/api';
+import { DataService } from '../../../service/data.service';
+
+@Component({
+  selector: 'app-graph',
+  templateUrl: './graph.component.html',
+  styleUrl: './graph.component.css',
+    providers: [MessageService],
+    
+})
+export class GraphComponent { 
+    data1: TreeNode[]=[];
+
+    data2: TreeNode[]=[];
+
+    selectedNode!: TreeNode;
+    data3=this._data.getHosts()
+
+    constructor(private messageService: MessageService,public _data:DataService) {}
+
+    ngOnInit() {
+    }
+    onNodeSelect(event: any) {
+        this.messageService.add({severity: 'success', summary: 'Node Selected', detail: event.node.label});
+    }
 }

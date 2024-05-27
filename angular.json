@@ -99,7 +99,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["node_moodules/chart.js/dist/chart.js"]
           }
         }
       }

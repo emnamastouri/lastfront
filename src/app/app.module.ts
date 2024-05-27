@@ -7,14 +7,9 @@ import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DefaultComponent } from './main/default/default.component';
 import { ChatComponent } from './main/chat/chat.component';
-import { AddagentComponent } from './main/admin/addagent/addagent.component';
 import { AdminloginComponent } from './main/admin/adminlogin/adminlogin.component';
 import { DashboardadminComponent } from './main/admin/dashboardadmin/dashboardadmin.component';
-import { DeleteComponent } from './main/admin/delete/delete.component';
 import { MyaccountComponent } from './main/admin/myaccount/myaccount.component';
-import { SeeallComponent } from './main/admin/seeall/seeall.component';
-import { SeeoneComponent } from './main/admin/seeone/seeone.component';
-import { UpdateagentComponent } from './main/admin/updateagent/updateagent.component';
 import { AgentaccountComponent } from './main/agent/agentaccount/agentaccount.component';
 import { AgentloginComponent } from './main/agent/agentlogin/agentlogin.component';
 import { DashboardagentComponent } from './main/agent/dashboardagent/dashboardagent.component';
@@ -23,6 +18,15 @@ import { VoirallhostComponent } from './main/partie_reseaux/voirallhost/voirallh
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {OrganizationChartModule} from 'primeng/organizationchart';
+import {ToastModule} from 'primeng/toast';
+import {PanelModule} from 'primeng/panel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Animation } from 'chart.js';
+import { AnimationDriver } from '@angular/animations/browser';
+import { DiagramModule, SnappingService } from '@syncfusion/ej2-angular-diagrams';
+import { ChatadminComponent } from './main/admin/chatadmin/chatadmin.component';
+import { ManageagentsComponent } from './main/admin/manageagents/manageagents.component'; 
 
 @NgModule({
   declarations: [
@@ -31,28 +35,32 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NotfoundComponent,
     DefaultComponent,
     ChatComponent,
-    AddagentComponent,
     AdminloginComponent,
     DashboardadminComponent,
-    DeleteComponent,
     MyaccountComponent,
-    SeeallComponent,
-    SeeoneComponent,
-    UpdateagentComponent,
     AgentaccountComponent,
     AgentloginComponent,
     DashboardagentComponent,
     GraphComponent,
-    VoirallhostComponent
+    VoirallhostComponent,
+    ChatadminComponent,
+    ManageagentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    OrganizationChartModule,
+    ToastModule,
+    PanelModule,
+    BrowserAnimationsModule,
+    DiagramModule,
+    
+   
   ],
-  providers: [],
+  providers: [SnappingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
