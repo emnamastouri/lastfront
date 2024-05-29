@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   styleUrl: './manageagents.component.css'
 })
 export class ManageagentsComponent {
+
   cinwanted=''
   wanted:any
  showForm = true;
@@ -38,6 +39,8 @@ export class ManageagentsComponent {
         this.showErrorDialog(err)
       }
     )
+
+    item.isEditing=false
 }
  edit(item: any) {
   item.isEditing = true;
@@ -193,7 +196,7 @@ showSuccessDialog(message: string): void {
   constructor(private _data:DataService) { }
 
   ngOnInit(): void {
-
+    
     this._data.getall()
     .subscribe(
       res=>{

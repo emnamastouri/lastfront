@@ -67,6 +67,7 @@ export class ChatadminComponent {
   }
 
   ngOnInit(): void {
+   
     this.scrollToBottom()
     this.cin = this._auth.getadmindata().cin;
     this._auth.getadminbyid(this.cin).subscribe(

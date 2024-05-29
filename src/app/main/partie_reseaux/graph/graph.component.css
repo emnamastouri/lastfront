@@ -1,94 +1,86 @@
-/*
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    padding: 0;
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
 }
-body{
-    height: 100%;
-    width: 100%;
-    display: grid;
+
+.header {
+    display: flex;
     align-items: center;
-    font-family: 'poppins', sans-serif;
-}
-.tree{
-    width: 100%;
-    height: auto;
-    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    height: 70px;
 }
 
-.tree ul{
-    display: inline-table;
-    text-align: center;
-    list-style-type: none;
-    position: relative;
-    padding: 10px;
-    transition: .5s;
-}
-.tree ul:before, .tree ul:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right: 50%;
-    width: 51%;
-    height: 10px;
+.header div {
+    padding: 5px;
+    margin-left: 100px;
+    height: 60px;
+
 
 }
-.tree ul:after{
-    right: auto;
-    left: 50%;
+
+
+.header p {
+    margin: 5px 0;
+
 }
-.tree ul:only-child:after, .tree ul:only-child:before{
-    display: none;
-}
-.tree ul:only-child{
-    padding-top: 0;
-}
-.tree ul:first-child:before, .tree ul:last-child:after{
-    border: 0 none;
-}
-.tree ul:last-child:before{
+
+.header p:first-child {
     
-    border-radius: 0px 5px 0px 0px;
-}
-.tree ul:first-child:after{
-    border-radius: 5px 0px 0px 0px;
-}
-.tree ul ul:before{
-    content:'';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 0;
-    height: 20px;
-}
-.tree a {
-    border:1px solid #ccc;
-    padding: 10px;
-    display: inline-grid;
-    border-radius:5px ;
-    text-decoration-line:none ;
-    border-radius: 5px;
-    transition:.5s ;
-}
-.tree a img{
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px !important;
-    border-radius: 100px;
-    margin: auto;
+    font-weight: bold;
+    font-size: smaller;
 
 }
-.tree a span {
-    border:1px solid #ccc;
-    border-radius: 5px;
-    color:#666;
-    padding: 8px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 500;
-
+.header p:last-child{
+    text-align: center;
+    font-size:smaller;
 }
-*/
+
+
+.header>div:first-child {
+    background-color: #9c9c9c9c;
+    border-radius: 20px;
+}
+
+
+.header .b {
+    background-color: #14db02aa;
+    border-radius: 20px;
+}
+.header .c {
+    background-color: #ff4000e9;
+    border-radius: 20px;
+} 
+.header .d {
+    background-color: #9c9c9c9c;
+    border-radius: 20px;
+    
+}
+.header .e {
+    background-color: #9c9c9c9c;
+    border-radius: 20px;
+}
+
+    /* Option 1: Target button element */
+    button {
+        /* Basic styles */
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        
+        /* Remove default button styles */
+        background: none; /* remove default background */
+        border-color: transparent; /* remove default border */
+        color: inherit; /* inherit text color from surrounding element */
+      }
+      
+      button:hover {
+        background-color: #e0e0e0;
+      }
+      .fas.fa-eye {
+        font-size: 19px; /* Adjust font size as needed */
+      
+      }

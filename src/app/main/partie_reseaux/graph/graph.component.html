@@ -1,0 +1,99 @@
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+   <div class="container" style="margin-left: 60px;">
+      <div class="header">
+         <div>
+            <p>Nombre total des équipement:</p>
+            <p>{{nb_total}}</p>
+         </div>
+         <div class="b">
+            <p>Nombre d'etat normale:</p>
+            <p>{{nb_normal}}</p>
+         </div>
+         <div class="c">
+            <p>Nombre d'etat critique:</p>
+            <p>{{nb_critique}}</p>
+         </div>
+         <div class="d">
+            <p>Nombre de routeur:</p>
+            <p>{{nb_router}}</p>
+         </div>
+         <div class="e">
+            <p>Nombre de pc: </p>
+            <p>{{nb_pc}}</p>
+         </div>
+      </div>
+   </div>
+   <div class="table-wrap" style="min-height: 510px;max-height: 500px;overflow-y: auto; ">
+      <table class="table ">
+         <thead style="position: sticky; top:10px">
+            <tr>
+               <th style="background-color: rgb(77, 97, 245); color: white;"></th>
+               <th style="background-color: rgb(77, 97, 245); color: white;">Address IP</th>
+               <th style="background-color: rgb(77, 97, 245); color: white;">Nom</th>
+               <th style="background-color: rgb(77, 97, 245); color: white;">Statut</th>
+               <th style="background-color: rgb(77, 97, 245); color: white;">dernière vérification</th>
+               <th style="background-color: rgb(77, 97, 245); color: white;">prochaine vérification</th>
+               <th style="background-color: rgb(77, 97, 245); color: white;"> Ports</th>
+
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of all">
+               <td><img [src]="item.icon_image" alt="Photo de profil" style="height: 35px;width: 45px;"></td>
+               <th>{{item.address}}</th>
+               <td>{{item.display_name}}</td>
+               <td>{{item.output}}</td>
+               <td>{{item.last_check}}</td>
+               <td>{{item.next_check}}</td>
+               <td><button *ngIf="item.icon_image=='assets/routerimage.png'" (click)="openpors(item.address)"
+                     class="eye" style=" background-color: white; color: rgb(55, 179, 55); "><i
+                        class="fa fa-eye"></i></button></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</body>
+
+
+
+
+
+
+<div #searchDialogRef *ngIf="showpors" style="position: fixed; top: 30px; display: block; ">
+   <div style="flex: 1 0;  max-width: 550px;max-height: 600px; min-width: 550px;min-height: 600px; overflow-y: auto;margin-left: 550px; margin-top: 70px;">
+      <form action="/submit_registration" method="post" id="addagebt" *ngIf="showpors">
+         <div class="image-flip">
+          
+              
+                  <div class="card" style="background-color: rgb(222, 232, 255);">
+                     <div class="card-body text-center" style="overflow-y: auto">
+
+                        <div *ngFor="let host of toshow">
+                           <!--<div *ngFor="let host of item.pors">-->
+                           <p style="font-weight: bold;">{{host.display_name}}</p>
+                           <p>{{host.output}}</p><br>
+                           <!-- </div>-->
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+           
+        
+      </form>
+      <button type="button" (click)="fermerpors()"
+         style="position: absolute;margin-top: 50px; top: 0; right: 0; background-color: rgb(255, 0, 0); border: none; padding: 10px; cursor: pointer;">
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+            viewBox="0 0 16 16">
+            <path
+               d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+         </svg>
+      </button>
+   </div>
+</div>

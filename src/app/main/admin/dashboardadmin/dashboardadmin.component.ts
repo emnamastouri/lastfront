@@ -39,16 +39,21 @@ myaccount(){
     this.my=true;
     this.chat=false;
     this.manage=false;
+    this.graph=false;
+    this.tout=false;
 
 }
 chatting(){
-
+  this.graph=false;
+  this.tout=false;
     this.my=false;
     this.chat=true;
     this.manage=false;
 
 }
 manageagents(){
+  this.graph=false;
+  this.tout=false;
     this.my=false;
     this.chat=false;
     this.manage=true;
